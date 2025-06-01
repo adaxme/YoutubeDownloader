@@ -1,0 +1,10 @@
+# Python backend for YouTube downloading using yt-dlp
+__pycache__/
+.env
+*.pyc
+*.pyo
+*.pyd
+.env.*
+.idea/
+.vscode/
+.DS_Store
