@@ -20,3 +20,12 @@ def download_video(request: DownloadRequest):
         return {"status": "success", "output": result.stdout}
     except subprocess.CalledProcessError as e:
         raise HTTPException(status_code=500, detail=e.stderr)
+
+@app.get("/")
+def root():
+    return {"message": "YouTube Downloader API is running."}
+
+if __name__ == "__main__":
+    import os
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))
